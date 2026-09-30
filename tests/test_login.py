@@ -1,17 +1,33 @@
-from playwright.sync_api import sync_playwright, expect
+from playwright.sync_api import Page, sync_playwright, expect
 
-def test_valid_login():
-    with sync_playwright() as p:
-        browser = p.chromium.launch(channel = "chrome", headless = False, slow_mo = 1000)
-        page = browser.new_page()
-        page.goto("https://www.saucedemo.com/")
+# def test_valid_login():
+#     with sync_playwright() as p:
+#         browser = p.launch(channel = "chrome", headless = False, slow_mo = 1000)
+#         page = browser.new_page()
+#         page.goto("https://www.saucedemo.com/")
 
-        page.get_by_placeholder("Username").fill("standard_user")
-        page.get_by_placeholder("Password").fill("secret_sauce")
-        page.get_by_role("button", name = "Login").click()
-        expect(page).to_have_url("https://www.saucedemo.com/inventory.html")
-        expect(page.get_by_text("Products")).to_be_visible()
+#         page.get_by_placeholder("Username").fill("standard_user")
+#         page.get_by_placeholder("Password").fill("secret_sauce")
+#         page.get_by_role("button", name = "Login").click()
+#         expect(page).to_have_url("https://www.saucedemo.com/inventory.html")
+#         expect(page.get_by_text("Products")).to_be_visible()
 
-        browser.close()
+#         browser.close()
 
-test_valid_login()
+# test_valid_login()
+
+def test_valid_login(page: Page, site_url: str, valid_credentials: dict):
+
+    # ---- ARRANGE: Go to the login page ----
+    page.goto(site_url)
+
+    # ---- ACT: fill the form and submit -----
+    page.get_by_placeholder("Username").fill(valid_credentials["username"])
+    page.get_by_placeholder("Password").fill(valid_credentials["password"])
+    page.get_by_role("button", name= "Login").click()
+
+    # ---- ASSERT: Did we land on the product page? ----
+    expect(page).to_have_url(f"{site_url}/inventory.html")
+    expect(page.get_by_text("Products")).to_be_visible()
+
+    

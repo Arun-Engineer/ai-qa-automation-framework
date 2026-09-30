@@ -1,7 +1,7 @@
 import pytest
 
 @pytest.fixture
-def base_url() -> str:
+def site_url() -> str:
     """The site under test - defined once, used by every test."""
     return "https://www.saucedemo.com"
 
