@@ -8,9 +8,9 @@ def first_non_repeating(word: str)-> int:
 
     for i, letter in enumerate(word):
         if count[letter] == 1:
-            return i
+            return letter
 
-    return -1
+    return None
 
 print(first_non_repeating("leetcode"))
 print(first_non_repeating("aabb"))

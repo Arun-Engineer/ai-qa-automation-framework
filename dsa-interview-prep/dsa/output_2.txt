@@ -1,5 +1,0 @@
-[Running] python -u "e:\Automation\ai-qa-automation-framework\dsa-interview-prep\dsa\day_2.py"
-0
--1
-
-[Done] exited with code=0 in 0.397 seconds

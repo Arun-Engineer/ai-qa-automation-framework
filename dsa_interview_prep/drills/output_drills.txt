@@ -1,0 +1,33 @@
+# drill 2
+(.venv) PS E:\Automation\ai-qa-automation-framework> pytest tests\test_drill2.py -v
+============================= test session starts =============================
+platform win32 -- Python 3.14.0, pytest-9.0.2, pluggy-1.6.0 -- C:\Users\WELCOME\AppData\Local\Programs\Python\Python314\python.exe
+cachedir: .pytest_cache
+metadata: {'Python': '3.14.0', 'Platform': 'Windows-11-10.0.26300-SP0', 'Packages': {'pytest': '9.0.2', 'pluggy': '1.6.0'}, 'Plugins': {'anyio': '4.12.1', 'langsmith': '0.6.8', 'asyncio': '1.3.0', 'base-url': '2.1.0', 'cov': '7.0.0', 'html': '4.2.0', 'json-report': '1.5.0', 'metadata': '3.1.1', 'playwright': '0.7.2'},'Base URL': ''}
+rootdir: E:\Automation\ai-qa-automation-framework
+configfile: pytest.ini
+plugins: anyio-4.12.1, langsmith-0.6.8, asyncio-1.3.0, base-url-2.1.0, cov-7.0.0, html-4.2.0, json-report-1.5.0, metadata-3.1.1, playwright-0.7.2
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 1 item                                                               
+
+tests/test_drill2.py::test_valid_login[chromium] PASSED                  [100%]
+
+============================== 1 passed in 6.25s ==============================
+(.venv) PS E:\Automation\ai-qa-automation-framework> 
+
+# drill 2
+(.venv) PS E:\Automation\ai-qa-automation-framework> pytest -v
+============================= test session starts =============================
+platform win32 -- Python 3.14.0, pytest-9.0.2, pluggy-1.6.0 -- C:\Users\WELCOME\AppData\Local\Programs\Python\Python314\python.exe
+cachedir: .pytest_cache
+metadata: {'Python': '3.14.0', 'Platform': 'Windows-11-10.0.26300-SP0', 'Packages': {'pytest': '9.0.2', 'pluggy': '1.6.0'}, 'Plugins': {'anyio': '4.12.1', 'langsmith': '0.6.8', 'asyncio': '1.3.0', 'base-url': '2.1.0', 'cov': '7.0.0', 'html': '4.2.0', 'json-report': '1.5.0', 'metadata': '3.1.1', 'playwright': '0.7.2'},'Base URL': ''}
+rootdir: E:\Automation\ai-qa-automation-framework
+configfile: pytest.ini
+testpaths: tests
+plugins: anyio-4.12.1, langsmith-0.6.8, asyncio-1.3.0, base-url-2.1.0, cov-7.0.0, html-4.2.0, json-report-1.5.0, metadata-3.1.1, playwright-0.7.2
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 1 item                                                               
+
+tests/test_drill2.py::test_invalid_login[chromium] PASSED                [100%]
+
+============================== 1 passed in 2.90s ==============================
