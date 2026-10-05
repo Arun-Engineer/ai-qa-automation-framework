@@ -22,3 +22,6 @@ class LoginPage:
         self.username_input.fill(username)
         self.password_input.fill(password)
         self.login_button.click()
+
+    def error_message(self):
+            return self.error_message_locator.inner_text()
