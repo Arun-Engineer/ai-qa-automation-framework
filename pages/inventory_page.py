@@ -7,7 +7,7 @@ class InventoryPage:
 
         self.title = page.locator(".title")
         self.products_loaded = page.locator(".inventory_list")
-        self.products = page.locator(".inventory_item").filter(has_text = "Backpack")
+        self.products = page.locator(".inventory_item")
 
     def page_title(self):
         expect(self.title).to_have_text("Products")
@@ -16,6 +16,9 @@ class InventoryPage:
         return self.products_loaded.is_visible()
 
     def add_to_cart(self):
+        self.products.filter(has_text = "Backpack").get_by_role("button", name = "Add to cart").click()
+
+    def add_all_to_cart(self):
 
         products_count = self.products.count()
 
