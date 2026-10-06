@@ -30,5 +30,5 @@ collected 1 item
 
 tests/test_login.py::test_inventory_page[chromium] PASSED                [100%]
 
-============================== 1 passed in 4.67s ==============================
+============================== 1 passed in 3.38s ==============================
 (.venv) PS E:\Automation\ai-qa-automation-framework> 
