@@ -10,6 +10,7 @@ class LoginPage:
         self.username_input = page.get_by_placeholder("Username")
         self.password_input = page.get_by_placeholder("Password")
         self.login_button = page.get_by_role("button", name = "Login")
+        self.error_message_locator = page.locator("[data-test='error']")
 
     # ---- METHODS: actions on this page -----
 
@@ -24,4 +25,4 @@ class LoginPage:
         self.login_button.click()
 
     def error_message(self):
-            return self.error_message_locator.inner_text()
+        return self.error_message_locator.inner_text()

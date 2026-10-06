@@ -1,5 +1,6 @@
 from playwright.sync_api import Page, sync_playwright, expect
 from pages.login_page import LoginPage
+from pages.inventory_page import InventoryPage
 
 # def test_valid_login():
 #     with sync_playwright() as p:
@@ -40,4 +41,33 @@ from pages.login_page import LoginPage
 
 
     #expect(page).to_have_url("https://www.saucedemo.com/inventory.html")
+
+# def test_invalid_login(page: Page, invalid_credentials: dict):
+#     login_page = LoginPage(page)
+
+#     login_page.load()
+
+#     login_page.login(invalid_credentials["username"], invalid_credentials["password"])
+
+#     error = login_page.error_message()
+
+#     print(error)
+
+#     assert "Username and password do not match" in error
+
+def test_inventory_page(page: Page, valid_credentials: dict):
+    login_page = LoginPage(page)
+    inventory_page = InventoryPage(page)
+
+    login_page.load()
+
+    login_page.login(valid_credentials["username"], valid_credentials["password"])
+
+    inventory_page.page_title()
+
+    inventory_page.product_load()
+
+    inventory_page.add_to_cart()
+
+    inventory_page.remove_from_cart()
     
