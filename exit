@@ -1,0 +1,16 @@
+[33m914a6d1[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Day 3: sort function added in inventory page
+[33m5652933[m Day 13: End to end checkout flow + new actions
+[33m947f49d[m[33m ([m[1;32mfeature/checkout[m[33m)[m Day 2 : single specific item add to cart fucntion acdded
+[33mf18e319[m  Day 2: cleaned version of Inventory page
+[33mac119ba[m Day 2 Inventory page added in pages of POM model
+[33m1a05d08[m Remove practice folder; keep portfolio framework-only
+[33mf59b24c[m Day 2: POM model
+[33ma6fa29b[m Day 2 DSA output
+[33m5da893b[m Day 2: DSA problem
+[33mb671aee[m Added readme file
+[33m5e87646[m Add conftest.py with shared fixtures (base_url, credentials)
+[33meff112e[m Add pytest.ini configuration
+[33m40a665e[m Commiting rquiremnents.txt
+[33me27fcd5[m Merge remote-tracking branch 'origin/main'
+[33mbc66824[m Initial commit: framework scaffold + login testS
+[33ma8743f7[m Initial commit

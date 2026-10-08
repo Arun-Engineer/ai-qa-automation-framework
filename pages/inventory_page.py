@@ -19,12 +19,12 @@ class InventoryPage:
 
     def sort_products_by_price_low_high(self, page):
         self.sort.select_option("Price (low to high)")
-        price = page.locator(".inventory_item_price")
+        price = page.locator(label = ".inventory_item_price")
         first_price = price.nth(0).inner_text()
         second_price = price.nth(1).inner_text()
 
-        first = first_price.replace("$", "")
-        second = second_price.replace("$", "")
+        first = float(first_price.replace("$", ""))
+        second = float(second_price.replace("$", ""))
 
         assert first <= second
 
