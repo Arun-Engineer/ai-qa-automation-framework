@@ -9,12 +9,25 @@ class InventoryPage:
         self.products_loaded = page.locator(".inventory_list")
         self.products = page.locator(".inventory_item")
         self.cart_link = page.locator(".shopping_cart_link")
+        self.sort = page.locator(".Price (low to high)")
 
     def page_title(self):
         expect(self.title).to_have_text("Products")
 
     def product_load(self):
         return self.products_loaded.is_visible()
+
+    def sort_products_by_price_low_high(self, page):
+        self.sort.select_option("Price (low to high)")
+        price = page.locator(".inventory_item_price")
+        first_price = price.nth(0).inner_text()
+        second_price = price.nth(1).inner_text()
+
+        first = first_price.replace("$", "")
+        second = second_price.replace("$", "")
+
+        assert first <= second
+
 
     def add_to_cart(self, product_name: str):
         self.products.filter(has_text = product_name).get_by_role("button", name = "Add to cart").click()
