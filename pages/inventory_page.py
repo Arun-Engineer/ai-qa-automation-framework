@@ -8,6 +8,7 @@ class InventoryPage:
         self.title = page.locator(".title")
         self.products_loaded = page.locator(".inventory_list")
         self.products = page.locator(".inventory_item")
+        self.cart_link = page.locator(".shopping_cart_link")
 
     def page_title(self):
         expect(self.title).to_have_text("Products")
@@ -15,8 +16,8 @@ class InventoryPage:
     def product_load(self):
         return self.products_loaded.is_visible()
 
-    def add_to_cart(self):
-        self.products.filter(has_text = "Backpack").get_by_role("button", name = "Add to cart").click()
+    def add_to_cart(self, product_name: str):
+        self.products.filter(has_text = product_name).get_by_role("button", name = "Add to cart").click()
 
     def add_all_to_cart(self):
 
@@ -42,4 +43,7 @@ class InventoryPage:
 
             add_cart = product.get_by_role("button", name = "Add to cart")
             expect(add_cart).to_be_enabled()
-            
+
+    def go_to_cart(self):
+
+        self.cart_link.click()

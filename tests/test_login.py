@@ -67,7 +67,7 @@ def test_inventory_page(page: Page, valid_credentials: dict):
 
     assert inventory_page.product_load()
 
-    inventory_page.add_to_cart()
+    inventory_page.add_to_cart("Backpack")
 
     inventory_page.remove_from_cart()
     
