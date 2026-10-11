@@ -1,0 +1,19 @@
+(.venv) PS E:\Automation\ai-qa-automation-framework> pytest tests/test_already_logged_in.py -v
+C:\Users\WELCOME\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytest_asyncio\plugin.py:247: PytestDeprecationWarning: The configuration option "asyncio_default_fixture_loop_scope" is unset.
+The event loop scope for asynchronous fixtures will default to the fixture caching scope. Future versions of pytest-asyncio will default the loopscope for asynchronous fixtures to function scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: "function", "class", "module", "package", "session"
+
+  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))
+========================= test session starts ==========================
+platform win32 -- Python 3.14.0, pytest-8.3.4, pluggy-1.6.0 -- C:\Users\WELCOME\AppData\Local\Programs\Python\Python314\python.exe
+cachedir: .pytest_cache
+metadata: {'Python': '3.14.0', 'Platform': 'Windows-11-10.0.26300-SP0', 'Packages': {'pytest': '8.3.4', 'pluggy': '1.6.0'}, 'Plugins': {'anyio': '4.12.1', 'langsmith': '0.6.8', 'asyncio': '1.3.0', 'base-url': '2.1.0', 'cov': '7.0.0', 'html': '4.2.0', 'json-report': '1.5.0', 'metadata': '3.1.1', 'playwright': '0.7.2'}, 'Base URL': ''}
+rootdir: E:\Automation\ai-qa-automation-framework
+configfile: pytest.ini
+plugins: anyio-4.12.1, langsmith-0.6.8, asyncio-1.3.0, base-url-2.1.0, cov-7.0.0, html-4.2.0, json-report-1.5.0, metadata-3.1.1, playwright-0.7.2
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 1 item                                                        
+
+tests/test_already_logged_in.py::test_already_loggedin[chromium] PASSED [100%]
+
+========================== 1 passed in 7.15s ===========================
+(.venv) PS E:\Automation\ai-qa-automation-framework> 
