@@ -1,0 +1,12 @@
+(.venv) PS E:\Automation\llm-test-framework> python -m pytest tests/ui/test_network_interception.py -v
+============================= test session starts =============================
+platform win32 -- Python 3.14.0, pytest-9.1.1, pluggy-1.6.0 -- E:\Automation\llm-test-framework\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: E:\Automation\llm-test-framework
+plugins: anyio-4.15.1, playwright-0.10.0
+collected 1 item                                                               
+
+tests/ui/test_network_interception.py::test_mocked_api_response[chromium] PASSED [100%]
+
+============================== 1 passed in 1.82s ==============================
+(.venv) PS E:\Automation\llm-test-framework> 
