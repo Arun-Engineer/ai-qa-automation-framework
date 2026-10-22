@@ -9,7 +9,7 @@ class InventoryPage:
         self.products_loaded = page.locator(".inventory_list")
         self.products = page.locator(".inventory_item")
         self.cart_link = page.locator(".shopping_cart_link")
-        self.sort = page.locator(label = ".Price (low to high)")
+        self.sort = page.locator(".Price (low to high)")
 
     def page_title(self):
         expect(self.title).to_have_text("Products")
@@ -18,7 +18,7 @@ class InventoryPage:
         return self.products_loaded.is_visible()
 
     def sort_products_by_price_low_high(self, page):
-        self.sort.select_option("Price (low to high)")
+        self.sort.select_option(label = "Price (low to high)")
         price = page.locator(".inventory_item_price")
         first_price = price.nth(0).inner_text()
         second_price = price.nth(1).inner_text()
