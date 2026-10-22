@@ -69,5 +69,5 @@ def test_inventory_page(page: Page, valid_credentials: dict):
 
     inventory_page.add_to_cart("Backpack")
 
-    inventory_page.remove_from_cart()
+    inventory_page.remove_from_cart("Backpack")
     
