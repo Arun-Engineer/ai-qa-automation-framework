@@ -45,17 +45,27 @@ class InventoryPage:
             remove_from_cart = product.get_by_role("button", name = "Remove")
             expect(remove_from_cart).to_be_visible()
 
-    def remove_from_cart(self):
-        products_count = self.products.count()
-        
-        for i in range(products_count):
-            product = self.products.nth(i)
-            remove_from_cart = product.get_by_role("button", name = "Remove")
-            expect(remove_from_cart).to_be_visible()            
-            remove_from_cart.click()
+    def remove_from_cart(self, product_name: str):
 
-            add_cart = product.get_by_role("button", name = "Add to cart")
-            expect(add_cart).to_be_enabled()
+        product = self.products.filter(
+            has_text=product_name
+        )
+
+        remove_button = product.get_by_role(
+            "button",
+            name="Remove"
+        )
+
+        expect(remove_button).to_be_visible()
+
+        remove_button.click()
+
+        add_button = product.get_by_role(
+            "button",
+            name="Add to cart"
+        )
+
+        expect(add_button).to_be_visible()
 
     def go_to_cart(self):
 
